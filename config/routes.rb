@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :cards
-  resources :boards
-  resources :lists 
+  root 'static_pages#root'
+
+  namespace :api, defaults: {format: :json} do
+    resources :boards
+  end
 end

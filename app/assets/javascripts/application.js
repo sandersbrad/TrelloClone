@@ -12,10 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require underscore
 //= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
-//= require backbone/trello_clone
+//= require trello_clone
+//= require utils/composite_view
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
 //= require_tree .

@@ -1,4 +1,4 @@
-class BoardsController < ApplicationController
+class Api::BoardsController < ApplicationController
 
   def create
     @board = Board.new(board_params)
@@ -9,6 +9,13 @@ class BoardsController < ApplicationController
       render json: @board.errors.full_messages
     end
 
+  end
+
+  def index
+    # current_user.boards
+    @boards = Board.all
+
+    render json: @boards
   end
 
   def destroy
