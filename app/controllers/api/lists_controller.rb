@@ -8,7 +8,6 @@ class Api::ListsController < ApplicationController
     else
       render json: @list.errors.full_messages
     end
-
   end
 
   def destroy
@@ -38,6 +37,12 @@ class Api::ListsController < ApplicationController
     @list = List.find(params[:id])
 
     render json: @list
+  end
+
+  def index
+    @lists = List.find_by_board_id(params[:board_id])
+
+    render json: @lists
   end
 
   private

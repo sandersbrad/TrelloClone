@@ -6,13 +6,11 @@ window.TrelloClone = {
   initialize: function() {
     // alert("backbone")
     var $rootEl = $('.content');
-    var boards = new TrelloClone.Collections.Boards();
-    boards.fetch();
 
-    new TrelloClone.Routers.BoardRouter(boards, $rootEl);
+    new TrelloClone.Routers.BoardRouter($rootEl)
     Backbone.history.start();
   }
-};
+}
 
 $(document).ready(function(){
   TrelloClone.initialize();
