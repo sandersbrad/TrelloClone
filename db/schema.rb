@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807182440) do
+ActiveRecord::Schema.define(version: 20150810190506) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "title",      null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150807182440) do
     t.integer  "list_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "ord"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150807182440) do
     t.integer  "board_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "ord"
   end
 
   add_index "lists", ["board_id"], name: "index_lists_on_board_id"
